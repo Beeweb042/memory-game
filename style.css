@@ -1,13 +1,16 @@
-/* Reset and base styles */
+/* ========== STYLES - RESET - VARIABLES - TYPO ========== */
 :root {
     --gradient-start: #89216B;
     --gradient-end: #DA4453;
-    --card-bg: aliceblue;
+    --screen-bg: aliceblue;
+    --card-bg: rgb(230, 208, 225);
     --border-color: black;
     --card-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 
-* {
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -20,61 +23,113 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--screen-bg);
+    color: #000;
+    line-height: 1.5;
 }
 
 
-/* Game board container */
+/* ========== GAME BOARD ========== */
+.game-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
 .game-board {
-    min-width: 300px;
-    width: 90vw;
-    max-width: 800px;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-    perspective: 800px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
     border: 5px solid var(--border-color);
-    padding: 1.5rem;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    perspective: 800px;
 }
 
+
+/* ========== CARDS STYLE ========== */
 .card {
-    height: 100%;
-    min-height: 80px;
+    aspect-ratio: 1;
     position: relative;
+    border-radius: 50%;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--card-shadow);
-    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    pointer-events: none;
+    border-radius: 50%;
+    overflow: hidden;
     backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back img {
+    width: 97%;
+    height: 97%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.card-back {
+    background-color: var(--card-bg);
+
+}
+
+.card-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    user-select: none;
+    padding: 0.5rem;
+    margin: 0 auto;
 }
 
 
 .card-front {
-    background: blue;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card.flipped {
     transform: rotateY(180deg);
 }
 
-.card-back {
-    background: fuchsia ;
-}
 
-.card.toggleCard {
-    transform: rotateY(180deg);
-}
-
-
-/* RESPONSIVE for desktop */
+/* ========== RESPONSIVE FOR LARGER SCREENS ========== */
 @media (min-width: 600px) {
     .game-board {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 1.5rem;
-        padding: 3.75rem;
+        padding: 4rem;
+    }
+    .card {
+        transform: scale(1);
     }
 }
