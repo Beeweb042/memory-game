@@ -38,6 +38,13 @@ Dans un premier temps dans le cadre de ma formation en développement web, puis 
 | Dossier/Fichier    | Description                               |
 |--------------------|-------------------------------------------|
 | 📁 img             | Contient les images des cartes            |
+| 📂 js                     |
+| ├── boardRendering.js | Affichage du plateau de jeu               |
+| ├── domEvents.js      | Gestion des événements DOM                |
+| ├── gameEvents.js     | Logique des interactions de jeu           |
+| ├── gameInitialization.js | Initialisation du jeu                |
+| ├── gameState.js      | État global du jeu                        |
+| └── main.js           | Point d'entrée principal                  |
 | 📁 public          | Contient les fichiers publics (screens, ...)  |
 | 📂 styles                     |
 | ├── animations.css | Styles pour les animations              |
@@ -48,7 +55,6 @@ Dans un premier temps dans le cadre de ma formation en développement web, puis 
 | ├── responsive.css | Gestion du responsive           |
 | └── variables.css  | Variables CSS (couleurs, fonts, etc.)  |
 | 📄 index.html      | Fichier principal               |
-| 📄 main.js         | Logique du jeu en JavaScript            |
 | 📄 readme.md       | Ce fichier README                    |
 
 ##  🚀 INSTALLATION 
