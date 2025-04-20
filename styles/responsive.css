@@ -1,0 +1,24 @@
+/* ==========================================================================  
+                    RESPONSIVE STYLES : Media Queries Only  
+   ==========================================================================  
+   - media queries for larger screens
+   - improved spacing and scaling
+   
+   Author: [Bee]  
+   Last Modified: 2025-04-20  
+   ========================================================================== */
+
+/* ========== RESPONSIVE FOR SCREENS >600px ========== */
+@media (min-width: 600px) {
+    .game-board {
+        max-width: 75%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.2rem;
+        padding: 2rem;
+    }
+
+    .card {
+        max-width: 80%;
+        transform: scale(1);
+    }
+}

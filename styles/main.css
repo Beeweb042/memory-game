@@ -1,0 +1,23 @@
+/* ==========================================================================  
+                    MAIN STYLES : Global setup  
+   ==========================================================================  
+   - main stylesheet that imports and combines all styles  
+   - includes style for
+        base & reset
+        variables for main design
+        layout of the game board
+        animations / keyframes
+        cards layout and style
+        responsive settings for lager screens
+  
+   Author: [Bee]  
+   Last Modified: 2025-04-20  
+   ========================================================================== */
+
+   /* ========== IMPORT STYLES ========== */
+   @import url('base.css');
+   @import url('variables.css');
+   @import url('layout.css');
+   @import url('animations.css');
+   @import url('cards.css');
+   @import url('responsive.css');

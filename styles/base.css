@@ -1,0 +1,32 @@
+/* ==========================================================================
+                    BASE STYLES - RESET & BODY
+   ========================================================================== 
+   - CSS reset
+   - Body styles
+   - Typo
+   
+   Author: [Bee]
+   Last Modified: 2025-04-20
+   ========================================================================== */
+
+/* ========== RESET - Set paddings, margins and box-sizing ========== */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BODY - Global Styles for Body ========== */
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}

@@ -1,0 +1,25 @@
+/* ==========================================================================
+                    GLOBAL DESIGN
+   ========================================================================== 
+   - colors
+   - effets
+   - fonts
+   
+   Author: [Bee]
+   Last Modified: 2025-04-20
+   ========================================================================== */
+
+:root {
+    --color-bg: #0D0D0D;
+    --color-primary: #9D00FF;
+    --color-secondary: #00FFFF;
+    --color-accent: #FF00FF;
+    --color-success: #39FF14;
+    --color-text: #B0B0B0;
+    --color-white: #FFFFFF;
+    --card-glow: rgba(157, 0, 255, 0.4);
+    --font-title: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+;

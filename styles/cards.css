@@ -1,0 +1,103 @@
+/* ==========================================================================
+                    ANIMATION STYLES : Keyframes & motion
+   ========================================================================== 
+   - card container
+   - card faces
+   - card image
+   - card hovered
+   - card flipped
+   - card matched
+
+   Author: [Bee]
+   Last Modified: 2025-04-20
+   ========================================================================== */
+
+/* ========== CARD CONTAINER - Main wrapper for a single card ========== */
+.card {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 6rem;
+    position: relative;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* ========== CARD FACE - Shared styles for front & back ========== */
+.card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== CARD BACK - Hidden by default ========== */
+.card-back img {
+    width: 97%;
+    height: 97%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* ========== CARD FRONT - Revealed on flip ========== */
+.card-front {
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 0 15px var(--card-glow);
+    transition:
+        box-shadow 0.5s ease-in-out,
+        border 0.5s ease;
+}
+
+/* ========== CARD IMAGE - Icon or symbol inside card ========== */
+.card-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    user-select: none;
+    padding: 0.3rem;
+    margin: 0 auto;
+}
+
+/* ========== CARD HOVER - Lift effect when hovered ========== */
+.card:hover:not(.flipped) {
+    box-shadow:
+        0 0 10px var(--color-secondary),
+        0 0 15px var(--color-secondary),
+        0 0 30px var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* ========== CARD FLIPPED - When card is rotated ========== */
+.card.flipped {
+    background: transparent;
+    box-shadow: 0 0 40px var(--card-glow);
+    transform: rotateY(180deg);
+}
+
+/* ========== CARD MATCHED - When two cards match ========== */
+.card.matched {
+    animation: cyber-glow 0.4s ease-in-out 2;
+    z-index: 1;
+}
+
+.card.matched .card-front {
+    box-shadow: none;
+    border: none;
+}

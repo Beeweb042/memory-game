@@ -1,0 +1,49 @@
+/* ==========================================================================
+                    ANIMATION STYLES : Keyframes & motion
+   ========================================================================== 
+   - card flip animation
+   - card glow animation
+
+   Author: [Bee]
+   Last Modified: 2025-04-20
+   ========================================================================== */
+
+/* ========== CARD FLIP ANIMATION - When the card is clicked ========== */
+@keyframes neonPulse {
+    0% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff;
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 30px #0ff;
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff;
+    }
+}
+
+/* ========== CARD GLOW ANIMATION - When a pair is found ========== */
+@keyframes cyber-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px var(--color-success);
+    }
+
+    50% {
+        box-shadow:
+            0 0 10px var(--color-success),
+            0 0 20px var(--color-success),
+            0 0 40px var(--color-success);
+    }
+}
